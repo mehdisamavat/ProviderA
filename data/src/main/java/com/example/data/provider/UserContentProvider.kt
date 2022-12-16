@@ -128,6 +128,8 @@ class UserContentProvider : ContentProvider() {
 
             }
             DOMAINS_ALL_FALSE_CODE->{
+                Log.i("mehdi", "update   all   ")
+
                 userDao.updateAllCheckedToFalse()
             }
             else -> 0

@@ -1,4 +1,4 @@
-package com.example.newprovider.di
+package com.example.providerA.di
 
 
 import com.example.domain.repository.IUserRepository

@@ -15,11 +15,11 @@ android {
             keyPassword '123456'
         }
     }
-    namespace 'com.example.newprovider'
+    namespace 'com.example.providerA'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.newprovider"
+        applicationId "com.example.providerA"
         minSdk 21
         targetSdk 33
         versionCode 1
@@ -33,7 +33,7 @@ android {
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            manifestPlaceholders = [store_app: "com.example.newprovider2"]
+            manifestPlaceholders = [store_app: "com.example.providerB"]
 
         }
 
@@ -42,7 +42,7 @@ android {
             signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            manifestPlaceholders = [store_app: "com.example.newprovider2"]
+            manifestPlaceholders = [store_app: "com.example.providerB"]
 
         }
 

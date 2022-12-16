@@ -1,4 +1,4 @@
-package com.example.newprovider.di
+package com.example.providerA.di
 
 import android.content.ContentResolver
 import com.example.data.dao.UserDao

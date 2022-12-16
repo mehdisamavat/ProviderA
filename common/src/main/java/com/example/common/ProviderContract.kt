@@ -11,8 +11,8 @@ object ProviderContract {
     const val DOMAINS_CODE = 10
     const val DOMAINS_ITEM_CODE = 11
 
-    const val AUTHORITY_A = "com.example.newprovider"
-    const val AUTHORITY_B = "com.example.newprovider2"
+    const val AUTHORITY_A = "com.example.providerA"
+    const val AUTHORITY_B = "com.example.providerB"
 
     const val DOMAIN_STRING_URI = "content://$AUTHORITY_A/$DOMAINS"
     const val DOMAIN_STRING_URI2 = "content://$AUTHORITY_B/$DOMAINS"

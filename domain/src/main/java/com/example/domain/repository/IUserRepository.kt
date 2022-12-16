@@ -13,5 +13,4 @@ interface IUserRepository {
     fun insertUser(user: User): String?
 
     fun updateUser(user: User): Int
-
 }

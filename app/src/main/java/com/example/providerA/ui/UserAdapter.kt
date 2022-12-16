@@ -1,4 +1,4 @@
-package com.example.newprovider.ui
+package com.example.providerA.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.newprovider.databinding.DataItemBinding
+import com.example.providerA.databinding.DataItemBinding
 import com.example.domain.model.User
 
 

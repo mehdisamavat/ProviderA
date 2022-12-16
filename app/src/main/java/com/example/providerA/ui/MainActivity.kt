@@ -1,4 +1,4 @@
-package com.example.newprovider.ui
+package com.example.providerA.ui
 
 import android.app.ActionBar
 import android.app.Dialog
@@ -14,9 +14,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.newprovider.R
-import com.example.newprovider.databinding.ActivityMainBinding
-import com.example.newprovider.databinding.AddDialogBinding
+import com.example.providerA.R
+import com.example.providerA.databinding.ActivityMainBinding
+import com.example.providerA.databinding.AddDialogBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 

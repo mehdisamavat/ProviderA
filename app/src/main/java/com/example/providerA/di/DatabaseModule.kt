@@ -1,4 +1,4 @@
-package com.example.newprovider.di
+package com.example.providerA.di
 
 import android.app.Application
 import android.content.ContentResolver

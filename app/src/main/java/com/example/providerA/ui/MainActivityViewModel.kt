@@ -1,4 +1,4 @@
-package com.example.newprovider.ui
+package com.example.providerA.ui
 
 import androidx.lifecycle.*
 import com.example.domain.model.User

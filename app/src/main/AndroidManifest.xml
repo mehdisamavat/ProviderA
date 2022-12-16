@@ -7,12 +7,11 @@
         android:label="custom.permission.CONTENT_PROVIDER"
         android:protectionLevel="signature" />
 
-
     <queries>
         <package android:name="${store_app}" />
     </queries>
 
-    <uses-permission android:name="custom.permission.CONTENT_PROVIDER2" android:protectionLevel="signature" />
+    <uses-permission android:name="custom.permission.CONTENT_PROVIDER_B" android:protectionLevel="signature" />
 
 
 
@@ -26,7 +25,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:name=".App"
         android:supportsRtl="true"
-        android:theme="@style/Theme.NewProvider"
+        android:theme="@style/Theme.ProviderA"
         tools:targetApi="31">
         <activity
             android:name=".ui.MainActivity"
@@ -44,19 +43,11 @@
 
         <provider
             android:name="com.example.data.provider.UserContentProvider"
-            android:authorities="com.example.newprovider"
+            android:authorities="com.example.providerA"
             android:exported="true"
             android:permission="custom.permission.CONTENT_PROVIDER"
             />
-        <!--            android:readPermission="com.example.newprovider.DOMAIN_READ"-->
 
-        <!--            android:permission="com.example.newprovider.READ_WRITE"-->
-        <!--            android:readPermission="com.example.newprovider.DOMAIN_READ"-->
-        <!--            android:grantUriPermissions="true"-->
-
-        <!--            android:readPermission="com.sanjaydevtech.cps.DOMAIN_READ"-->
-        <!--            android:writePermission="com.sanjaydevtech.cps.DOMAIN_WRITE"-->
-        <!--            />-->
     </application>
 
 </manifest>
