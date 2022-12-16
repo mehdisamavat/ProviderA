@@ -1,4 +1,4 @@
-package com.example.providerA.ui
+package com.example.providerA.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,10 +8,11 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.domain.model.User
 import com.example.providerA.databinding.DataItemBinding
+import com.example.providerA.ui.MainViewModel
 
 
 class UserAdapter(
-    private val mainViewModel: MainActivityViewModel,
+    private val mainViewModel: MainViewModel,
     private val lifecycleOwner: LifecycleOwner,
 ) :
     RecyclerView.Adapter<UserAdapter.DataViewHolder>() {
@@ -21,7 +22,7 @@ class UserAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(
             user: User,
-            mainViewModel: MainActivityViewModel,
+            mainViewModel: MainViewModel,
             lifecycleOwner: LifecycleOwner,
         ) {
             binding.user = user

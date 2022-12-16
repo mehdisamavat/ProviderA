@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">A</string>
+    <string name="app_name">Provider A</string>
+    <string name="enter_user_info">"نام و وضعیت کاربر را وارد کنید "</string>
 </resources>

@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MainActivityViewModel @Inject constructor(
+class MainViewModel @Inject constructor(
     private val getUserUseCase: GetUserUseCase,
     getUsersUseCase: GetUsersUseCase,
     private val insertUserUseCase: InsertUserUseCase,
@@ -17,6 +17,7 @@ class MainActivityViewModel @Inject constructor(
     private val updateUserUseCase: UpdateUserUseCase,
 ) : ViewModel() {
 
+    val allUsers: LiveData<List<User?>> = getUsersUseCase().asLiveData()
 
     fun insertUser(name: String, checked: Boolean) {
         viewModelScope.launch(Dispatchers.IO) {
@@ -27,8 +28,6 @@ class MainActivityViewModel @Inject constructor(
     fun getUser(id: Int) = liveData {
         emit(getUserUseCase.invoke(id).asLiveData())
     }
-
-    val allUsers: LiveData<List<User?>> = getUsersUseCase().asLiveData()
 
     fun getAllUsers() {
         viewModelScope.launch {
