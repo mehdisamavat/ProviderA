@@ -11,19 +11,19 @@
         <package android:name="${store_app}" />
     </queries>
 
-    <uses-permission android:name="custom.permission.CONTENT_PROVIDER_B" android:protectionLevel="signature" />
-
-
+    <uses-permission
+        android:name="custom.permission.CONTENT_PROVIDER_B"
+        android:protectionLevel="signature" />
 
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:name=".App"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProviderA"
         tools:targetApi="31">
@@ -42,11 +42,10 @@
         </activity>
 
         <provider
-            android:name="com.example.data.provider.UserContentProvider"
+            android:name="com.example.data.provider.UserContentProviderA"
             android:authorities="com.example.providerA"
             android:exported="true"
-            android:permission="custom.permission.CONTENT_PROVIDER"
-            />
+            android:permission="custom.permission.CONTENT_PROVIDER" />
 
     </application>
 
