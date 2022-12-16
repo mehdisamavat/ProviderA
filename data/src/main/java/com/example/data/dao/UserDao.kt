@@ -8,16 +8,16 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-     fun insert(userEntity: UserEntity): Long
+    fun insert(userEntity: UserEntity): Long
 
     @Update
-     fun update(userEntity: UserEntity): Int
+    fun update(userEntity: UserEntity): Int
 
     @Query("UPDATE UserEntity SET checked = CASE WHEN 1 THEN 0 END")
-    fun updateAllCheckedToFalse():Int
+    fun updateAllCheckedToFalse(): Int
 
     @Query(value = "DELETE FROM UserEntity WHERE id=:id")
-     fun deleteById(id: Int):Int
+    fun deleteById(id: Int): Int
 
     @Query(value = "SELECT * FROM UserEntity ")
     fun getAllUsers(): Flow<List<UserEntity>>

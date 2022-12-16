@@ -1,33 +1,21 @@
 package com.example.data.repository
 
 
-import android.net.Uri
-import com.example.data.localdatasource.IUserLocalDataSource
+import com.example.data.dao.UserDao
+import com.example.data.mapper.UserMapper.toDomain
 import com.example.domain.model.User
 import com.example.domain.repository.IUserRepository
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 
-class UserRepository(private val iUserLocalDataSource: IUserLocalDataSource) : IUserRepository {
+class UserRepository(private val userDao: UserDao) : IUserRepository {
+
     override fun getUsers(): Flow<List<User?>> {
-      return iUserLocalDataSource.getUsers()
+        return userDao.getAllUsers().map { list -> list.map { it.toDomain() } }
     }
 
     override fun getUser(id: Int): Flow<User?> {
-      return iUserLocalDataSource.getUser(id)
+        return userDao.getUser(id).map { user -> user.toDomain() }
     }
-
-    override  fun deleteUser(id: Int): Int {
-        return   iUserLocalDataSource.deleteUser(id)
-    }
-
-    override  fun insertUser(user: User): String? {
-        return iUserLocalDataSource.insertUser(user)?.path
-    }
-
-    override  fun updateUser(user: User): Int {
-        return iUserLocalDataSource.updateUser(user)
-    }
-
-
 
 }

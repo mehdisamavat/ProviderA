@@ -1,8 +1,11 @@
 package com.example.providerA.di
 
 
-import com.example.data.localdatasource.IUserLocalDataSource
+import com.example.data.dao.UserDao
+import com.example.data.provider.ProviderManager
+import com.example.data.repository.ContentProviderRepository
 import com.example.data.repository.UserRepository
+import com.example.domain.repository.IContentProviderRepository
 import com.example.domain.repository.IUserRepository
 import dagger.Module
 import dagger.Provides
@@ -16,6 +19,12 @@ object RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideProjectRepository(iUserLocalDataSource: IUserLocalDataSource): IUserRepository =
-        UserRepository(iUserLocalDataSource)
+    fun provideProjectRepository(userDao: UserDao): IUserRepository = UserRepository(userDao)
+
+    @Provides
+    @Singleton
+    fun provideContentProviderRepository(providerManager: ProviderManager): IContentProviderRepository =
+        ContentProviderRepository(providerManager)
+
+
 }

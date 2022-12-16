@@ -7,7 +7,6 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.data.dao.UserDao
 import com.example.data.entity.UserEntity
 
-
 @Database(entities = [UserEntity::class], version = 2)
 abstract class MainDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao

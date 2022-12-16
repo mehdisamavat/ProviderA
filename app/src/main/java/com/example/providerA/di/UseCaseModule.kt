@@ -1,12 +1,9 @@
 package com.example.providerA.di
 
 
+import com.example.domain.repository.IContentProviderRepository
 import com.example.domain.repository.IUserRepository
-import com.example.domain.usecase.DeleteUserUseCase
-import com.example.domain.usecase.GetUserUseCase
-import com.example.domain.usecase.GetUsersUseCase
-import com.example.domain.usecase.InsertUserUseCase
-import com.example.domain.usecase.UpdateUserUseCase
+import com.example.domain.usecase.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,20 +16,20 @@ object UseCaseModule {
 
     @Provides
     @ViewModelScoped
-    fun provideInsertUserUseCase(iUserRepository: IUserRepository) =
-        InsertUserUseCase(iUserRepository)
+    fun provideInsertUserUseCase(iContentProviderRepository: IContentProviderRepository) =
+        InsertUserUseCase(iContentProviderRepository)
 
 
     @Provides
     @ViewModelScoped
-    fun provideDeleteUserUseCase(iUserRepository: IUserRepository) =
-        DeleteUserUseCase(iUserRepository)
+    fun provideDeleteUserUseCase(iContentProviderRepository: IContentProviderRepository) =
+        DeleteUserUseCase(iContentProviderRepository)
 
 
     @Provides
     @ViewModelScoped
-    fun provideUpdateUserUseCase(iUserRepository: IUserRepository) =
-        UpdateUserUseCase(iUserRepository)
+    fun provideUpdateUserUseCase(iContentProviderRepository: IContentProviderRepository) =
+        UpdateUserUseCase(iContentProviderRepository)
 
 
     @Provides

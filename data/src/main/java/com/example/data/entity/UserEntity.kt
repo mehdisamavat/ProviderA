@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class UserEntity(
-    @PrimaryKey(autoGenerate = true) val id: Int ,
+    @PrimaryKey(autoGenerate = true) val id: Int,
     val name: String,
-    var checked:Boolean
+    var checked: Boolean
 )

@@ -2,11 +2,7 @@ package com.example.providerA.ui
 
 import androidx.lifecycle.*
 import com.example.domain.model.User
-import com.example.domain.usecase.DeleteUserUseCase
-import com.example.domain.usecase.GetUserUseCase
-import com.example.domain.usecase.GetUsersUseCase
-import com.example.domain.usecase.InsertUserUseCase
-import com.example.domain.usecase.UpdateUserUseCase
+import com.example.domain.usecase.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -22,10 +18,9 @@ class MainActivityViewModel @Inject constructor(
 ) : ViewModel() {
 
 
-
-    fun insertUser( name: String, checked: Boolean)  {
+    fun insertUser(name: String, checked: Boolean) {
         viewModelScope.launch(Dispatchers.IO) {
-            insertUserUseCase.invoke(User(name = name, checked = checked))
+            insertUserUseCase.invoke(name = name, checked = checked)
         }
     }
 
@@ -35,7 +30,7 @@ class MainActivityViewModel @Inject constructor(
 
     val allUsers: LiveData<List<User?>> = getUsersUseCase().asLiveData()
 
-    fun getAllUsers(){
+    fun getAllUsers() {
         viewModelScope.launch {
 
         }
@@ -49,10 +44,9 @@ class MainActivityViewModel @Inject constructor(
 
     fun updateUser(id: Int, name: String, checked: Boolean) {
         viewModelScope.launch {
-            updateUserUseCase.invoke(User(id, name, checked))
+            updateUserUseCase.invoke(id, name, checked)
         }
     }
-
 
 
 }

@@ -33,14 +33,15 @@ class MainActivity : AppCompatActivity() {
         object : Dialog(this) {
             override fun onCreate(savedInstanceState: Bundle?) {
                 super.onCreate(savedInstanceState)
-                addDialogBinding = DataBindingUtil.inflate(layoutInflater, R.layout.add_dialog, null, false)
+                addDialogBinding =
+                    DataBindingUtil.inflate(layoutInflater, R.layout.add_dialog, null, false)
                 addDialogBinding.apply {
-                    dialogHandler = object :OnItemDialogClick{
+                    dialogHandler = object : OnItemDialogClick {
                         override fun submit(name: String, checked: Boolean) {
-                            mainViewModel.insertUser(name,checked)
+                            mainViewModel.insertUser(name, checked)
                             dismiss()
                             this@apply.userNameEditText.setText("")
-                            this@apply.checkedCheckBox.isChecked=false
+                            this@apply.checkedCheckBox.isChecked = false
                         }
                     }
                     lifecycleOwner = lifecycleOwner
@@ -48,8 +49,11 @@ class MainActivity : AppCompatActivity() {
                 }
                 window?.apply {
                     setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-                    setGravity( Gravity.CENTER)
-                    setLayout(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
+                    setGravity(Gravity.CENTER)
+                    setLayout(
+                        ActionBar.LayoutParams.MATCH_PARENT,
+                        ActionBar.LayoutParams.WRAP_CONTENT
+                    );
                     attributes = window?.attributes?.apply {
                         flags and WindowManager.LayoutParams.FLAG_DIM_BEHIND.inv()
                     }
@@ -64,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         setContentView(binding.root)
 
-        userAdapter = UserAdapter( mainViewModel, this)
+        userAdapter = UserAdapter(mainViewModel, this)
         binding.itemRecyclerView.apply {
             layoutManager = LinearLayoutManager(this@MainActivity, RecyclerView.VERTICAL, false)
             adapter = userAdapter
@@ -74,9 +78,8 @@ class MainActivity : AppCompatActivity() {
             userAdapter.differ.submitList(userList)
         }
 
-
-
     }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_item, menu)
         return true
@@ -92,8 +95,6 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
-
 
 
 }
