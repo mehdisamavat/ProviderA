@@ -12,7 +12,7 @@ import com.example.providerA.databinding.AddDialogBinding
 
 
 class AddDialog(context: Context, private val onSubmitDialogClick: OnSubmitDialogClick) :
-    Dialog(context, R.style.CustomAlertDialog) {
+    Dialog(context, R.style.AddDialogStyle) {
     private lateinit var addDialogBinding: AddDialogBinding
     private val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager?
 

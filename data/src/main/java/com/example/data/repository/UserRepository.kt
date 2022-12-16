@@ -1,7 +1,7 @@
 package com.example.data.repository
 
 
-import com.example.data.dao.UserDao
+import com.example.data.local.dao.UserDao
 import com.example.data.mapper.UserMapper.toDomain
 import com.example.domain.model.User
 import com.example.domain.repository.IUserRepository

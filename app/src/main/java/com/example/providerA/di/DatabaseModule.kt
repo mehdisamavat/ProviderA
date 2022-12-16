@@ -2,7 +2,7 @@ package com.example.providerA.di
 
 import android.app.Application
 import androidx.room.Room
-import com.example.data.database.MainDatabase
+import com.example.data.local.database.MainDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,8 +1,8 @@
 package com.example.providerA.di
 
 
-import com.example.data.dao.UserDao
-import com.example.data.provider.ProviderManager
+import com.example.data.local.dao.UserDao
+import com.example.data.local.provider.ProviderManager
 import com.example.data.repository.ContentProviderRepository
 import com.example.data.repository.UserRepository
 import com.example.domain.repository.IContentProviderRepository

@@ -1,4 +1,4 @@
-package com.example.data.dao
+package com.example.data.local.dao
 
 import android.database.Cursor
 import androidx.room.*

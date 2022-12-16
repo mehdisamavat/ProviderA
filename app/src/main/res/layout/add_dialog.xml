@@ -16,7 +16,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp">
+        android:padding="@dimen/sPadding">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,8 +26,8 @@
             app:layout_constraintTop_toTopOf="parent"
             android:text="@string/enter_user_info"
             android:textStyle="bold"
-            android:padding="10dp"
-            android:textSize="15sp"
+            android:padding="@dimen/mPadding"
+            android:textSize="@dimen/mFontSize"
             android:gravity="center"/>
 
 
@@ -35,7 +35,7 @@
             android:id="@+id/checkedCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="@dimen/mMargin"
             android:checked="false"
             app:layout_constraintBottom_toBottomOf="@id/userNameEditText"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -61,9 +61,9 @@
             android:src="@drawable/ic_baseline_done_24"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:background="@drawable/btn_bg"
-            android:paddingVertical="10dp"
-            android:paddingHorizontal="30dp"
+            android:background="@drawable/bg_btn"
+            android:paddingVertical="@dimen/mPadding"
+            android:paddingHorizontal="@dimen/lPadding"
             app:layout_constraintTop_toBottomOf="@+id/userNameEditText"
             tools:ignore="MissingConstraints" />
 

@@ -1,7 +1,8 @@
 package com.example.data.repository
 
-import com.example.common.ProviderContract.DOMAIN_URI_A
-import com.example.data.provider.ProviderManager
+import com.example.data.local.provider.ProviderManager
+import com.example.data.local.provider.UserContentProviderA.Companion.DOMAIN_URI_A
+import com.example.data.local.provider.UserContentProviderA.Companion.PROVIDER_A
 import com.example.domain.repository.IContentProviderRepository
 
 class ContentProviderRepository(private val providerManager: ProviderManager) :
@@ -15,12 +16,12 @@ class ContentProviderRepository(private val providerManager: ProviderManager) :
             pathUrl = DOMAIN_URI_A,
             name = name,
             checked = checked,
-            from = "A"
+            from = PROVIDER_A
         )
     }
 
     override fun updateUser(id: Int, name: String, checked: Boolean): Int {
-        return providerManager.updateUser(DOMAIN_URI_A, id, name, checked, "A")
+        return providerManager.updateUser(DOMAIN_URI_A, id, name, checked, PROVIDER_A)
     }
 
 }

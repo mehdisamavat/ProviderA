@@ -15,5 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "ProviderA"
 include ':app'
 include ':domain'
-include ':common'
 include ':data'

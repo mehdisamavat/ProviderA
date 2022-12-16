@@ -27,7 +27,6 @@ android {
 }
 
 dependencies {
-    implementation project(path: ':common')
     implementation project(path: ':domain')
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.7.22"

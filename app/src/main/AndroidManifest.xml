@@ -42,7 +42,7 @@
         </activity>
 
         <provider
-            android:name="com.example.data.provider.UserContentProviderA"
+            android:name="com.example.data.local.provider.UserContentProviderA"
             android:authorities="com.example.providerA"
             android:exported="true"
             android:permission="custom.permission.CONTENT_PROVIDER" />
