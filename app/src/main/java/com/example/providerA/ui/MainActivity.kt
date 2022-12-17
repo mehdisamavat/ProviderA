@@ -3,6 +3,7 @@ package com.example.providerA.ui
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -47,6 +48,10 @@ class MainActivity : AppCompatActivity() {
 
         mainViewModel.allUsers.observe(this) { userList ->
             userAdapter.differ.submitList(userList)
+        }
+
+        mainViewModel.stateResponse.observe(this){
+            Toast.makeText(this,it,Toast.LENGTH_SHORT).show()
         }
 
     }
