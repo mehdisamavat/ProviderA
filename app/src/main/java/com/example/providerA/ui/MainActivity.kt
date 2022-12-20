@@ -15,13 +15,13 @@ import com.example.providerA.R
 import com.example.providerA.databinding.ActivityMainBinding
 import com.example.providerB.IMyAidlInterface
 import dagger.hilt.android.AndroidEntryPoint
+import kotlin.random.Random
 
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(), ServiceConnection {
 
     lateinit var binding: ActivityMainBinding
-    private val mainViewModel by viewModels<MainViewModel>()
     var isServiceConnected = false
     var iMyAidlInterface: IMyAidlInterface? = null
 
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity(), ServiceConnection {
 
         binding.create.setOnClickListener {
             if (!isServiceConnected) {
-                val intent = Intent("aidlexample")
+                val intent = Intent()
                 intent.component =
                     ComponentName("com.example.providerB", "com.example.providerB.ConsumerService")
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity(), ServiceConnection {
                 this.bindService(intent, this, BIND_AUTO_CREATE)
             } else {
                 try {
-                    iMyAidlInterface?.getData("mehdi", false)
+                    iMyAidlInterface?.getData(Random.nextInt(0, 100).toString(), false)
                 } catch (e: RemoteException) {
                     e.printStackTrace()
                 }
@@ -56,11 +56,10 @@ class MainActivity : AppCompatActivity(), ServiceConnection {
 
 
     override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-        Log.i("mehdi", "connected")
         isServiceConnected = true
         iMyAidlInterface = IMyAidlInterface.Stub.asInterface(service)
         try {
-            iMyAidlInterface?.getData("mehdi", false)
+            iMyAidlInterface?.getData(Random.nextInt(0, 100).toString(), false)
         } catch (e: RemoteException) {
             e.printStackTrace()
         }
@@ -68,7 +67,6 @@ class MainActivity : AppCompatActivity(), ServiceConnection {
 
     override fun onServiceDisconnected(name: ComponentName?) {
         isServiceConnected = false
-        Log.i("mehdi", "disconnected")
         try {
             iMyAidlInterface?.stopService()
         } catch (e: RemoteException) {
