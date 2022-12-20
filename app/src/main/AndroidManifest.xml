@@ -2,18 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <permission
-        android:name="custom.permission.CONTENT_PROVIDER"
-        android:label="custom.permission.CONTENT_PROVIDER"
-        android:protectionLevel="signature" />
-
     <queries>
         <package android:name="${store_app}" />
     </queries>
-
-    <uses-permission
-        android:name="custom.permission.CONTENT_PROVIDER_B"
-        android:protectionLevel="signature" />
 
 
     <application
@@ -41,11 +32,6 @@
                 android:value="" />
         </activity>
 
-        <provider
-            android:name="com.example.data.local.provider.UserContentProviderA"
-            android:authorities="com.example.providerA"
-            android:exported="true"
-            android:permission="custom.permission.CONTENT_PROVIDER" />
 
     </application>
 
